@@ -43,6 +43,42 @@ cat *_R2_001.fastq.gz > ../../fastq/HCT116_WT_CEBPB_R2.fastq.gz
 ###############################################################################
 # Bismark Index no Epstein-Barr and with Lambda and pUC19.
 /home/rtm/myprograms/Bismark/bismark_genome_preparation --bowtie2 /home/rtm/chip-em/genome_hg38_wgbs/
+###############################################################################
+# Bismark aligment.
+/home/rtm/myprograms/Bismark/bismark --bowtie2 --multicore 22 \
+/home/rtm/chip-em/genome_hg38_wgbs/ \
+-1 /home/rtm/chip-em/fastq_trim/HCT116_DKO_CEBPB_R1_val_1.fq.gz \
+-2 /home/rtm/chip-em/fastq_trim/HCT116_DKO_CEBPB_R2_val_2.fq.gz \
+--output_dir /home/rtm/chip-em/bam/
+
+/home/rtm/myprograms/Bismark/bismark --bowtie2 --multicore 22 \
+/home/rtm/chip-em/genome_hg38_wgbs/ \
+-1 /home/rtm/chip-em/fastq_trim/HCT116_DKO_H3K4me1_R1_val_1.fq.gz \
+-2 /home/rtm/chip-em/fastq_trim/HCT116_DKO_H3K4me1_R2_val_2.fq.gz \
+--output_dir /home/rtm/chip-em/bam/
+
+/home/rtm/myprograms/Bismark/bismark --bowtie2 --multicore 22 \
+/home/rtm/chip-em/genome_hg38_wgbs/ \
+-1 /home/rtm/chip-em/fastq_trim/HCT116_WT_CEBPB_R1_val_1.fq.gz \
+-2 /home/rtm/chip-em/fastq_trim/HCT116_WT_CEBPB_R2_val_2.fq.gz \
+--output_dir /home/rtm/chip-em/bam/
+
+/home/rtm/myprograms/Bismark/bismark --bowtie2 --multicore 22 \
+/home/rtm/chip-em/genome_hg38_wgbs/ \
+-1 /home/rtm/chip-em/fastq_trim/HCT116_WT_H3K4me1_R1_val_1.fq.gz \
+-2 /home/rtm/chip-em/fastq_trim/HCT116_WT_H3K4me1_R2_val_2.fq.gz \
+--output_dir /home/rtm/chip-em/bam/
+
+/home/rtm/myprograms/Bismark/bismark --bowtie2 --multicore 22 \
+/home/rtm/chip-em/genome_hg38_wgbs/ \
+-1 /home/rtm/chip-em/fastq_trim/K562_WT_H3K4me1_R1_val_1.fq.gz \
+-2 /home/rtm/chip-em/fastq_trim/K562_WT_H3K4me1_R2_val_2.fq.gz \
+--output_dir /home/rtm/chip-em/bam/
+###############################################################################
+
+
+
+
 
 
 

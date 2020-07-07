@@ -42,10 +42,7 @@ cat *_R2_001.fastq.gz > ../../fastq/HCT116_WT_CEBPB_R2.fastq.gz
 # bash trim.bash &> trim.log
 ###############################################################################
 # Bismark Index no Epstein-Barr and with Lambda and pUC19.
-
-wget http://hgdownload.soe.ucsc.edu/goldenPath/hg38/bigZips/hg38.fa.gz
-
-/home/rtm/myprograms/Bismark/bismark_genome_preparation --bowtie2
+/home/rtm/myprograms/Bismark/bismark_genome_preparation --bowtie2 /home/rtm/chip-em/genome_hg38_wgbs/
 
 
 

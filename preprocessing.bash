@@ -79,6 +79,33 @@ cat *_R2_001.fastq.gz > ../../fastq/HCT116_WT_CEBPB_R2.fastq.gz
 --output_dir /home/rtm/chip-em/bam/
 # bash bismark.bash &> bismark.log 
 ###############################################################################
+# methylation extractor
+/home/rtm/myprograms/Bismark/bismark_methylation_extractor --multicore 20 --gzip \
+--paired-end --bedGraph --comprehensive --cytosine_report \
+--CX_context --genome_folder /home/rtm/chip-em/genome_hg38_wgbs/ /home/rtm/chip-em/bam/HCT116_DKO_CEBPB_R1_val_1_bismark_bt2_pe.bam \
+--output /home/rtm/chip-em/methylation_extractor/ 
+
+/home/rtm/myprograms/Bismark/bismark_methylation_extractor --multicore 20 --gzip \
+--paired-end --bedGraph --comprehensive --cytosine_report \
+--CX_context --genome_folder /home/rtm/chip-em/genome_hg38_wgbs/ /home/rtm/chip-em/bam/HCT116_DKO_H3K4me1_R1_val_1_bismark_bt2_pe.bam \
+--output /home/rtm/chip-em/methylation_extractor/ 
+
+/home/rtm/myprograms/Bismark/bismark_methylation_extractor --multicore 20 --gzip \
+--paired-end --bedGraph --comprehensive --cytosine_report \
+--CX_context --genome_folder /home/rtm/chip-em/genome_hg38_wgbs/ /home/rtm/chip-em/bam/HCT116_WT_CEBPB_R1_val_1_bismark_bt2_pe.bam \
+--output /home/rtm/chip-em/methylation_extractor/ 
+
+/home/rtm/myprograms/Bismark/bismark_methylation_extractor --multicore 20 --gzip \
+--paired-end --bedGraph --comprehensive --cytosine_report \
+--CX_context --genome_folder /home/rtm/chip-em/genome_hg38_wgbs/ /home/rtm/chip-em/bam/HCT116_WT_H3K4me1_R1_val_1_bismark_bt2_pe.bam \
+--output /home/rtm/chip-em/methylation_extractor/ 
+
+/home/rtm/myprograms/Bismark/bismark_methylation_extractor --multicore 20 --gzip \
+--paired-end --bedGraph --comprehensive --cytosine_report \
+--CX_context --genome_folder /home/rtm/chip-em/genome_hg38_wgbs/ /home/rtm/chip-em/bam/K562_WT_H3K4me1_R1_val_1_bismark_bt2_pe.bam \
+--output /home/rtm/chip-em/methylation_extractor/ 
+# bash bismark_methylation_extractor.bash &> bismark_methylation_extractor.log 
+###############################################################################
 
 
 

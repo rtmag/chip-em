@@ -55,9 +55,15 @@
 /home/rtm/chip-em/encode_data/ENCODE_CHIP_EM_CONTROL/HCT116_input_Peggy_rep2_ENCFF000VCW.fastq.gz
 ################################################################################################################################################################
 ################################################################################################################################################################
+bowtie2-build /home/rtm/chip-em/genome_hg38_bowtie2/hg38_nonScaff_lambda_pUC19.fa /home/rtm/chip-em/genome_hg38_bowtie2/hg38_nonScaff_lambda_pUC19_bowtie2
+ 
+bowtie2 -p 40 --very-sensitive -x /root/resources/hg38_bowtie2/hg38 \
+-1 <(zcat /root/vivek/vivek_new_rna_seq/fastq/B1_S38_R1_001.fastq.gz) \
+-2 <(zcat /root/vivek/vivek_new_rna_seq/fastq/B1_S38_R2_001.fastq.gz) \
+-S /root/vivek/vivek_new_rna_seq/bowtie2/BRAF_1.sam &> BRAF_1.log
 
-
-
-
+samtools view -bS /root/vivek/vivek_new_rna_seq/bowtie2/BRAF_1.sam > /root/vivek/vivek_new_rna_seq/bowtie2/BRAF_1.bam
+rm /root/vivek/vivek_new_rna_seq/bowtie2/BRAF_1.sam 
+#
 
 

@@ -56,14 +56,72 @@
 ################################################################################################################################################################
 ################################################################################################################################################################
 bowtie2-build /home/rtm/chip-em/genome_hg38_bowtie2/hg38_nonScaff_lambda_pUC19.fa /home/rtm/chip-em/genome_hg38_bowtie2/hg38_nonScaff_lambda_pUC19_bowtie2
- 
-bowtie2 -p 40 --very-sensitive -x /root/resources/hg38_bowtie2/hg38 \
--1 <(zcat /root/vivek/vivek_new_rna_seq/fastq/B1_S38_R1_001.fastq.gz) \
--2 <(zcat /root/vivek/vivek_new_rna_seq/fastq/B1_S38_R2_001.fastq.gz) \
--S /root/vivek/vivek_new_rna_seq/bowtie2/BRAF_1.sam &> BRAF_1.log
+##
+# HCT116_CEBPB_rep1
+bowtie2 -p 4 --very-sensitive -x /home/rtm/chip-em/genome_hg38_bowtie2/hg38_nonScaff_lambda_pUC19_bowtie2 \
+-U /home/rtm/chip-em/encode_data/encode_fastq_trim/HCT116_CEBPB_rep1_ENCFF000OYS_trimmed.fq.gz \
+-S /home/rtm/chip-em/encode_data/encode_bam/HCT116_CEBPB_rep1.sam &> /home/rtm/chip-em/encode_data/encode_bam/HCT116_CEBPB_rep1.log
 
-samtools view -bS /root/vivek/vivek_new_rna_seq/bowtie2/BRAF_1.sam > /root/vivek/vivek_new_rna_seq/bowtie2/BRAF_1.bam
-rm /root/vivek/vivek_new_rna_seq/bowtie2/BRAF_1.sam 
-#
+samtools view -bS /home/rtm/chip-em/encode_data/encode_bam/HCT116_CEBPB_rep1.sam > /home/rtm/chip-em/encode_data/encode_bam/HCT116_CEBPB_rep1.bam
+rm /home/rtm/chip-em/encode_data/encode_bam/HCT116_CEBPB_rep1.sam
+# HCT116_CEBPB_rep2
+bowtie2 -p 4 --very-sensitive -x /home/rtm/chip-em/genome_hg38_bowtie2/hg38_nonScaff_lambda_pUC19_bowtie2 \
+-U /home/rtm/chip-em/encode_data/encode_fastq_trim/HCT116_CEBPB_rep2_ENCFF000OYU_trimmed.fq.gz \
+-S /home/rtm/chip-em/encode_data/encode_bam/HCT116_CEBPB_rep2.sam &> /home/rtm/chip-em/encode_data/encode_bam/HCT116_CEBPB_rep2.log
 
+samtools view -bS /home/rtm/chip-em/encode_data/encode_bam/HCT116_CEBPB_rep2.sam > /home/rtm/chip-em/encode_data/encode_bam/HCT116_CEBPB_rep2.bam
+rm /home/rtm/chip-em/encode_data/encode_bam/HCT116_CEBPB_rep2.sam
+# HCT116_H3K4me1_Bernstein_isogenic1_rep1
+bowtie2 -p 4 --very-sensitive -x /home/rtm/chip-em/genome_hg38_bowtie2/hg38_nonScaff_lambda_pUC19_bowtie2 \
+-1 /home/rtm/chip-em/encode_data/encode_fastq_trim/HCT116_H3K4me1_Bernstein_isogenic1_rep1_R1_ENCFF088BWP_val_1.fq.gz \
+-2 /home/rtm/chip-em/encode_data/encode_fastq_trim/HCT116_H3K4me1_Bernstein_isogenic1_rep1_R2_ENCFF804MJI_val_2.fq.gz \
+-S /home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Bernstein_isogenic1_rep1.sam \
+&> /home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Bernstein_isogenic1_rep1.log
+
+samtools view -bS /home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Bernstein_isogenic1_rep1.sam > /home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Bernstein_isogenic1_rep1.bam
+rm /home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Bernstein_isogenic1_rep1.sam
+# HCT116_H3K4me1_Bernstein_isogenic1_rep2
+bowtie2 -p 4 --very-sensitive -x /home/rtm/chip-em/genome_hg38_bowtie2/hg38_nonScaff_lambda_pUC19_bowtie2 \
+-1 /home/rtm/chip-em/encode_data/encode_fastq_trim/HCT116_H3K4me1_Bernstein_isogenic1_rep2_R1_ENCFF924HDE_val_1.fq.gz \
+-2 /home/rtm/chip-em/encode_data/encode_fastq_trim/HCT116_H3K4me1_Bernstein_isogenic1_rep2_R2_ENCFF993JWW_val_2.fq.gz \
+-S /home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Bernstein_isogenic1_rep2.sam \
+&> /home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Bernstein_isogenic1_rep2.log
+
+samtools view -bS /home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Bernstein_isogenic1_rep2.sam > /home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Bernstein_isogenic1_rep2.bam
+rm /home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Bernstein_isogenic1_rep2.sam
+# HCT116_H3K4me1_Bernstein_isogenic2_rep1
+bowtie2 -p 4 --very-sensitive -x /home/rtm/chip-em/genome_hg38_bowtie2/hg38_nonScaff_lambda_pUC19_bowtie2 \
+-U /home/rtm/chip-em/encode_data/encode_fastq_trim/HCT116_H3K4me1_Bernstein_isogenic2_rep1_ENCFF973AFN_trimmed.fq.gz \
+-S /home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Bernstein_isogenic2_rep1.sam &> /home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Bernstein_isogenic2_rep1.log
+
+samtools view -bS /home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Bernstein_isogenic2_rep1.sam > /home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Bernstein_isogenic2_rep1.bam
+rm /home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Bernstein_isogenic2_rep1.sam
+# HCT116_H3K4me1_Bernstein_isogenic2_rep2
+bowtie2 -p 4 --very-sensitive -x /home/rtm/chip-em/genome_hg38_bowtie2/hg38_nonScaff_lambda_pUC19_bowtie2 \
+-U /home/rtm/chip-em/encode_data/encode_fastq_trim/HCT116_H3K4me1_Bernstein_isogenic2_rep2_ENCFF564VKX_trimmed.fq.gz \
+-S /home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Bernstein_isogenic2_rep2.sam &> /home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Bernstein_isogenic2_rep2.log
+
+samtools view -bS /home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Bernstein_isogenic2_rep2.sam > /home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Bernstein_isogenic2_rep2.bam
+rm /home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Bernstein_isogenic2_rep2.sam
+# HCT116_H3K4me1_Bernstein_isogenic2_rep3
+bowtie2 -p 4 --very-sensitive -x /home/rtm/chip-em/genome_hg38_bowtie2/hg38_nonScaff_lambda_pUC19_bowtie2 \
+-U /home/rtm/chip-em/encode_data/encode_fastq_trim/HCT116_H3K4me1_Bernstein_isogenic2_rep3_ENCFF126DXV_trimmed.fq.gz \
+-S /home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Bernstein_isogenic2_rep3.sam &> /home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Bernstein_isogenic2_rep3.log
+
+samtools view -bS /home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Bernstein_isogenic2_rep3.sam > /home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Bernstein_isogenic2_rep3.bam
+rm /home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Bernstein_isogenic2_rep3.sam
+--------
+
+
+HCT116_H3K4me1_Peggy_rep1_ENCFF000VCI_trimmed.fq.gz
+HCT116_H3K4me1_Peggy_rep2_ENCFF000VCK_trimmed.fq.gz
+HCT116_input_Bernstein_isogenic1_R1_ENCFF048ZOQ_val_1.fq.gz
+HCT116_input_Bernstein_isogenic1_R2_ENCFF827YXC_val_2.fq.gz
+HCT116_input_Bernstein_isogenic2_rep1_ENCFF413RQG_trimmed.fq.gz
+HCT116_input_Bernstein_isogenic2_rep2_ENCFF796ERZ_trimmed.fq.gz
+HCT116_input_Bernstein_isogenic2_rep3_ENCFF957PGR_trimmed.fq.gz
+HCT116_input_Myers_rep1_ENCFF000PBW_trimmed.fq.gz
+HCT116_input_Myers_rep2_ENCFF000PBY_trimmed.fq.gz
+HCT116_input_Peggy_rep1_ENCFF000VCY_trimmed.fq.gz
+HCT116_input_Peggy_rep2_ENCFF000VCW_trimmed.fq.gz
 

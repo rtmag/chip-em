@@ -56,7 +56,8 @@
 ################################################################################################################################################################
 ################################################################################################################################################################
 bowtie2-build /home/rtm/chip-em/genome_hg38_bowtie2/hg38_nonScaff_lambda_pUC19.fa /home/rtm/chip-em/genome_hg38_bowtie2/hg38_nonScaff_lambda_pUC19_bowtie2
-##
+################################################################################################################################################################
+################################################################################################################################################################
 # HCT116_CEBPB_rep1
 bowtie2 -p 4 --very-sensitive -x /home/rtm/chip-em/genome_hg38_bowtie2/hg38_nonScaff_lambda_pUC19_bowtie2 \
 -U /home/rtm/chip-em/encode_data/encode_fastq_trim/HCT116_CEBPB_rep1_ENCFF000OYS_trimmed.fq.gz \
@@ -110,18 +111,79 @@ bowtie2 -p 4 --very-sensitive -x /home/rtm/chip-em/genome_hg38_bowtie2/hg38_nonS
 
 samtools view -bS /home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Bernstein_isogenic2_rep3.sam > /home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Bernstein_isogenic2_rep3.bam
 rm /home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Bernstein_isogenic2_rep3.sam
---------
+# HCT116_H3K4me1_Peggy_rep1
+bowtie2 -p 4 --very-sensitive -x /home/rtm/chip-em/genome_hg38_bowtie2/hg38_nonScaff_lambda_pUC19_bowtie2 \
+-U /home/rtm/chip-em/encode_data/encode_fastq_trim/HCT116_H3K4me1_Peggy_rep1_ENCFF000VCI_trimmed.fq.gz \
+-S /home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Peggy_rep1.sam &> /home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Peggy_rep1.log
 
+samtools view -bS /home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Peggy_rep1.sam > /home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Peggy_rep1.bam
+rm /home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Peggy_rep1.sam
+# HCT116_H3K4me1_Peggy_rep2
+bowtie2 -p 4 --very-sensitive -x /home/rtm/chip-em/genome_hg38_bowtie2/hg38_nonScaff_lambda_pUC19_bowtie2 \
+-U /home/rtm/chip-em/encode_data/encode_fastq_trim/HCT116_H3K4me1_Peggy_rep2_ENCFF000VCK_trimmed.fq.gz \
+-S /home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Peggy_rep2.sam &> /home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Peggy_rep2.log
 
-HCT116_H3K4me1_Peggy_rep1_ENCFF000VCI_trimmed.fq.gz
-HCT116_H3K4me1_Peggy_rep2_ENCFF000VCK_trimmed.fq.gz
-HCT116_input_Bernstein_isogenic1_R1_ENCFF048ZOQ_val_1.fq.gz
-HCT116_input_Bernstein_isogenic1_R2_ENCFF827YXC_val_2.fq.gz
-HCT116_input_Bernstein_isogenic2_rep1_ENCFF413RQG_trimmed.fq.gz
-HCT116_input_Bernstein_isogenic2_rep2_ENCFF796ERZ_trimmed.fq.gz
-HCT116_input_Bernstein_isogenic2_rep3_ENCFF957PGR_trimmed.fq.gz
-HCT116_input_Myers_rep1_ENCFF000PBW_trimmed.fq.gz
-HCT116_input_Myers_rep2_ENCFF000PBY_trimmed.fq.gz
-HCT116_input_Peggy_rep1_ENCFF000VCY_trimmed.fq.gz
-HCT116_input_Peggy_rep2_ENCFF000VCW_trimmed.fq.gz
+samtools view -bS /home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Peggy_rep2.sam > /home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Peggy_rep2.bam
+rm /home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Peggy_rep2.sam
+################################################################################################################################################################
+################################################################################################################################################################
+# HCT116_input_Bernstein_isogenic1
+bowtie2 -p 4 --very-sensitive -x /home/rtm/chip-em/genome_hg38_bowtie2/hg38_nonScaff_lambda_pUC19_bowtie2 \
+-1 /home/rtm/chip-em/encode_data/encode_fastq_trim/HCT116_input_Bernstein_isogenic1_R1_ENCFF048ZOQ_val_1.fq.gz \
+-2 /home/rtm/chip-em/encode_data/encode_fastq_trim/HCT116_input_Bernstein_isogenic1_R2_ENCFF827YXC_val_2.fq.gz \
+-S /home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Bernstein_isogenic1.sam \
+&> /home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Bernstein_isogenic1.log
 
+samtools view -bS /home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Bernstein_isogenic1.sam > /home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Bernstein_isogenic1.bam
+rm /home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Bernstein_isogenic1.sam
+# HCT116_input_Bernstein_isogenic2_rep1
+bowtie2 -p 4 --very-sensitive -x /home/rtm/chip-em/genome_hg38_bowtie2/hg38_nonScaff_lambda_pUC19_bowtie2 \
+-U /home/rtm/chip-em/encode_data/encode_fastq_trim/HCT116_input_Bernstein_isogenic2_rep1_ENCFF413RQG_trimmed.fq.gz \
+-S /home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Bernstein_isogenic2_rep1.sam &> /home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Bernstein_isogenic2_rep1.log
+
+samtools view -bS /home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Bernstein_isogenic2_rep1.sam > /home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Bernstein_isogenic2_rep1.bam
+rm /home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Bernstein_isogenic2_rep1.sam
+# HCT116_input_Bernstein_isogenic2_rep2
+bowtie2 -p 4 --very-sensitive -x /home/rtm/chip-em/genome_hg38_bowtie2/hg38_nonScaff_lambda_pUC19_bowtie2 \
+-U /home/rtm/chip-em/encode_data/encode_fastq_trim/HCT116_input_Bernstein_isogenic2_rep2_ENCFF796ERZ_trimmed.fq.gz \
+-S /home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Bernstein_isogenic2_rep2.sam &> /home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Bernstein_isogenic2_rep2.log
+
+samtools view -bS /home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Bernstein_isogenic2_rep2.sam > /home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Bernstein_isogenic2_rep2.bam
+rm /home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Bernstein_isogenic2_rep2.sam
+# HCT116_input_Bernstein_isogenic2_rep3
+bowtie2 -p 4 --very-sensitive -x /home/rtm/chip-em/genome_hg38_bowtie2/hg38_nonScaff_lambda_pUC19_bowtie2 \
+-U /home/rtm/chip-em/encode_data/encode_fastq_trim/HCT116_input_Bernstein_isogenic2_rep3_ENCFF957PGR_trimmed.fq.gz \
+-S /home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Bernstein_isogenic2_rep3.sam &> /home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Bernstein_isogenic2_rep3.log
+
+samtools view -bS /home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Bernstein_isogenic2_rep3.sam > /home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Bernstein_isogenic2_rep3.bam
+rm /home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Bernstein_isogenic2_rep3.sam
+# HCT116_input_Myers_rep1
+bowtie2 -p 4 --very-sensitive -x /home/rtm/chip-em/genome_hg38_bowtie2/hg38_nonScaff_lambda_pUC19_bowtie2 \
+-U /home/rtm/chip-em/encode_data/encode_fastq_trim/HCT116_input_Myers_rep1_ENCFF000PBW_trimmed.fq.gz \
+-S /home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Myers_rep1.sam &> /home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Myers_rep1.log
+
+samtools view -bS /home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Myers_rep1.sam > /home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Myers_rep1.bam
+rm /home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Myers_rep1.sam
+# HCT116_input_Myers_rep2
+bowtie2 -p 4 --very-sensitive -x /home/rtm/chip-em/genome_hg38_bowtie2/hg38_nonScaff_lambda_pUC19_bowtie2 \
+-U /home/rtm/chip-em/encode_data/encode_fastq_trim/HCT116_input_Myers_rep2_ENCFF000PBY_trimmed.fq.gz \
+-S /home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Myers_rep2.sam &> /home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Myers_rep2.log
+
+samtools view -bS /home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Myers_rep2.sam > /home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Myers_rep2.bam
+rm /home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Myers_rep2.sam
+# HCT116_input_Peggy_rep1
+bowtie2 -p 4 --very-sensitive -x /home/rtm/chip-em/genome_hg38_bowtie2/hg38_nonScaff_lambda_pUC19_bowtie2 \
+-U /home/rtm/chip-em/encode_data/encode_fastq_trim/HCT116_input_Peggy_rep1_ENCFF000VCY_trimmed.fq.gz \
+-S /home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Peggy_rep1.sam &> /home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Peggy_rep1.log
+
+samtools view -bS /home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Peggy_rep1.sam > /home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Peggy_rep1.bam
+rm /home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Peggy_rep1.sam
+# HCT116_input_Peggy_rep2
+bowtie2 -p 4 --very-sensitive -x /home/rtm/chip-em/genome_hg38_bowtie2/hg38_nonScaff_lambda_pUC19_bowtie2 \
+-U /home/rtm/chip-em/encode_data/encode_fastq_trim/HCT116_input_Peggy_rep2_ENCFF000VCW_trimmed.fq.gz \
+-S /home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Peggy_rep2.sam &> /home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Peggy_rep2.log
+
+samtools view -bS /home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Peggy_rep2.sam > /home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Peggy_rep2.bam
+rm /home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Peggy_rep2.sam
+################################################################################################################################################################
+################################################################################################################################################################

@@ -447,6 +447,27 @@ bamCoverage -p max -bs 1 --normalizeUsing CPM -b /home/rtm/chip-em/encode_data/e
 bamCoverage -p max -bs 1 --normalizeUsing CPM -b /home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Myers_rep2_rmdup.bam -o /home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Myers_rep2.bw
 bamCoverage -p max -bs 1 --normalizeUsing CPM -b /home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Peggy_rep1_rmdup.bam -o /home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Peggy_rep1.bw
 bamCoverage -p max -bs 1 --normalizeUsing CPM -b /home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Peggy_rep2_rmdup.bam -o /home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Peggy_rep2.bw
-
+################################################################################################################################################################
+################################################################################################################################################################
+# Encode CEBPB 1 & 2
+macs2 callpeak -f BAM -g hs -q 0.05 --keep-dup auto --call-summits -n ENCODE_CEBPB --outdir /home/rtm/chip-em/encode_data/encode_macs2/ \
+-t /home/rtm/chip-em/encode_data/encode_bam/HCT116_CEBPB_rep1_rmdup.bam /home/rtm/chip-em/encode_data/encode_bam/HCT116_CEBPB_rep2_rmdup.bam \
+-c /home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Myers_rep1_rmdup.bam /home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Myers_rep2_rmdup.bam &
+# Encode H3K4me1_Bernstein_isogenic1 
+macs2 callpeak -f BAMPE -g hs -q 0.05 --keep-dup auto --call-summits -n H3K4me1_Bernstein_isogenic1 --outdir /home/rtm/chip-em/encode_data/encode_macs2/ \
+-t /home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Bernstein_isogenic1_rep1_rmdup.bam /home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Bernstein_isogenic1_rep2_rmdup.bam \
+-c /home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Bernstein_isogenic1_rmdup.bam &
+# Encode H3K4me1_Bernstein_isogenic2
+macs2 callpeak -f BAM -g hs -q 0.05 --keep-dup auto --call-summits -n H3K4me1_Bernstein_isogenic2 --outdir /home/rtm/chip-em/encode_data/encode_macs2/ \
+-t /home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Bernstein_isogenic2_rep1_rmdup.bam \
+/home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Bernstein_isogenic2_rep2_rmdup.bam /home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Bernstein_isogenic2_rep3_rmdup.bam \
+-c /home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Bernstein_isogenic2_rep1_rmdup.bam /home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Bernstein_isogenic2_rep2_rmdup.bam \
+/home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Bernstein_isogenic2_rep3_rmdup.bam &
+# Encode HCT116_H3K4me1_Peggy
+macs2 callpeak -f BAM -g hs -q 0.05 --keep-dup auto --call-summits -n HCT116_H3K4me1_Peggy --outdir /home/rtm/chip-em/encode_data/encode_macs2/ \
+-t /home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Peggy_rep1_rmdup.bam /home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Peggy_rep2_rmdup.bam \
+-c /home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Peggy_rep1_rmdup.bam /home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Peggy_rep2_rmdup.bam &
+################################################################################################################################################################
+################################################################################################################################################################
 
 

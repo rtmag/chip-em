@@ -106,7 +106,69 @@ cat *_R2_001.fastq.gz > ../../fastq/HCT116_WT_CEBPB_R2.fastq.gz
 --output /home/rtm/chip-em/methylation_extractor/ 
 # bash bismark_methylation_extractor.bash &> bismark_methylation_extractor.log 
 ###############################################################################
+# HCT116_DKO_CEBPB
+java -jar /home/rtm/myprograms/picard/build/libs/picard.jar SortSam \
+CREATE_INDEX=true \
+INPUT=/home/rtm/chip-em/bam/HCT116_DKO_CEBPB_R1_val_1_bismark_bt2_pe.bam \
+OUTPUT=/home/rtm/chip-em/bam/HCT116_DKO_CEBPB_sort.bam \
+SORT_ORDER=coordinate \
+VALIDATION_STRINGENCY=STRICT &
+# HCT116_DKO_h3k4me1
+java -jar /home/rtm/myprograms/picard/build/libs/picard.jar SortSam \
+CREATE_INDEX=true \
+INPUT=/home/rtm/chip-em/bam/HCT116_DKO_H3K4me1_R1_val_1_bismark_bt2_pe.bam \
+OUTPUT=/home/rtm/chip-em/bam/HCT116_DKO_H3K4me1_sort.bam \
+SORT_ORDER=coordinate \
+VALIDATION_STRINGENCY=STRICT &
+# HCT116_WT_CEBPB
+java -jar /home/rtm/myprograms/picard/build/libs/picard.jar SortSam \
+CREATE_INDEX=true \
+INPUT=/home/rtm/chip-em/bam/HCT116_WT_CEBPB_R1_val_1_bismark_bt2_pe.bam \
+OUTPUT=/home/rtm/chip-em/bam/HCT116_WT_CEBPB_sort.bam \
+SORT_ORDER=coordinate \
+VALIDATION_STRINGENCY=STRICT
+# HCT116_WT_h3k4me1
+java -jar /home/rtm/myprograms/picard/build/libs/picard.jar SortSam \
+CREATE_INDEX=true \
+INPUT=/home/rtm/chip-em/bam/HCT116_WT_H3K4me1_R1_val_1_bismark_bt2_pe.bam \
+OUTPUT=/home/rtm/chip-em/bam/HCT116_WT_H3K4me1_sort.bam \
+SORT_ORDER=coordinate \
+VALIDATION_STRINGENCY=STRICT
+################################################################################################################################################################
+# MarkDup
+java -Xmx250g -jar /home/rtm/myprograms/picard/build/libs/picard.jar MarkDuplicates \
+VALIDATION_STRINGENCY=STRICT \
+CREATE_INDEX=true \
+M=/home/rtm/chip-em/bam/HCT116_DKO_CEBPB_rmdup.txt \
+INPUT=/home/rtm/chip-em/bam/HCT116_DKO_CEBPB_sort.bam \
+OUTPUT=/home/rtm/chip-em/bam/HCT116_DKO_CEBPB_rmdup.bam
 
+java -Xmx250g -jar /home/rtm/myprograms/picard/build/libs/picard.jar MarkDuplicates \
+VALIDATION_STRINGENCY=STRICT \
+CREATE_INDEX=true \
+M=/home/rtm/chip-em/bam/HCT116_DKO_H3K4me1_rmdup.txt \
+INPUT=/home/rtm/chip-em/bam/HCT116_DKO_H3K4me1_sort.bam \
+OUTPUT=/home/rtm/chip-em/bam/HCT116_DKO_H3K4me1_rmdup.bam
+
+java -Xmx250g -jar /home/rtm/myprograms/picard/build/libs/picard.jar MarkDuplicates \
+VALIDATION_STRINGENCY=STRICT \
+CREATE_INDEX=true \
+M=/home/rtm/chip-em/bam/HCT116_WT_CEBPB_rmdup.txt \
+INPUT=/home/rtm/chip-em/bam/HCT116_WT_CEBPB_sort.bam \
+OUTPUT=/home/rtm/chip-em/bam/HCT116_WT_CEBPB_rmdup.bam
+
+java -Xmx250g -jar /home/rtm/myprograms/picard/build/libs/picard.jar MarkDuplicates \
+VALIDATION_STRINGENCY=STRICT \
+CREATE_INDEX=true \
+M=/home/rtm/chip-em/bam/HCT116_WT_H3K4me1_rmdup.txt \
+INPUT=/home/rtm/chip-em/bam/HCT116_WT_H3K4me1_sort.bam \
+OUTPUT=/home/rtm/chip-em/bam/HCT116_WT_H3K4me1_rmdup.bam
+################################################################################################################################################################
+bamCoverage -p max -bs 1 --normalizeUsing CPM -b /home/rtm/chip-em/bam/HCT116_DKO_CEBPB_rmdup.bam -o /home/rtm/chip-em/bam/HCT116_DKO_CEBPB.bw
+bamCoverage -p max -bs 1 --normalizeUsing CPM -b /home/rtm/chip-em/bam/HCT116_DKO_H3K4me1_rmdup.bam -o /home/rtm/chip-em/bam/HCT116_DKO_H3K4me1.bw
+bamCoverage -p max -bs 1 --normalizeUsing CPM -b /home/rtm/chip-em/bam/HCT116_WT_CEBPB_rmdup.bam -o /home/rtm/chip-em/bam/HCT116_WT_CEBPB.bw
+bamCoverage -p max -bs 1 --normalizeUsing CPM -b /home/rtm/chip-em/bam/HCT116_WT_H3K4me1_rmdup.bam -o /home/rtm/chip-em/bam/HCT116_WT_H3K4me1.bw
+################################################################################################################################################################
 
 
 

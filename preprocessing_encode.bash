@@ -187,3 +187,266 @@ samtools view -bS /home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Peggy_re
 rm /home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Peggy_rep2.sam
 ################################################################################################################################################################
 ################################################################################################################################################################
+# sort bam
+java -jar /home/rtm/myprograms/picard/build/libs/picard.jar SortSam \
+CREATE_INDEX=true \
+INPUT=/home/rtm/chip-em/encode_data/encode_bam/HCT116_CEBPB_rep1.bam \
+OUTPUT=/home/rtm/chip-em/encode_data/encode_bam/HCT116_CEBPB_rep1_sort.bam \
+SORT_ORDER=coordinate \
+VALIDATION_STRINGENCY=STRICT &
+
+java -jar /home/rtm/myprograms/picard/build/libs/picard.jar SortSam \
+CREATE_INDEX=true \
+INPUT=/home/rtm/chip-em/encode_data/encode_bam/HCT116_CEBPB_rep2.bam \
+OUTPUT=/home/rtm/chip-em/encode_data/encode_bam/HCT116_CEBPB_rep2_sort.bam \
+SORT_ORDER=coordinate \
+VALIDATION_STRINGENCY=STRICT &
+
+java -jar /home/rtm/myprograms/picard/build/libs/picard.jar SortSam \
+CREATE_INDEX=true \
+INPUT=/home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Bernstein_isogenic1_rep1.bam \
+OUTPUT=/home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Bernstein_isogenic1_rep1_sort.bam \
+SORT_ORDER=coordinate \
+VALIDATION_STRINGENCY=STRICT &
+
+java -jar /home/rtm/myprograms/picard/build/libs/picard.jar SortSam \
+CREATE_INDEX=true \
+INPUT=/home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Bernstein_isogenic1_rep2.bam \
+OUTPUT=/home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Bernstein_isogenic1_rep2_sort.bam \
+SORT_ORDER=coordinate \
+VALIDATION_STRINGENCY=STRICT &
+
+java -jar /home/rtm/myprograms/picard/build/libs/picard.jar SortSam \
+CREATE_INDEX=true \
+INPUT=/home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Bernstein_isogenic2_rep1.bam \
+OUTPUT=/home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Bernstein_isogenic2_rep1_sort.bam \
+SORT_ORDER=coordinate \
+VALIDATION_STRINGENCY=STRICT &
+
+java -jar /home/rtm/myprograms/picard/build/libs/picard.jar SortSam \
+CREATE_INDEX=true \
+INPUT=/home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Bernstein_isogenic2_rep2.bam \
+OUTPUT=/home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Bernstein_isogenic2_rep2_sort.bam \
+SORT_ORDER=coordinate \
+VALIDATION_STRINGENCY=STRICT &
+
+java -jar /home/rtm/myprograms/picard/build/libs/picard.jar SortSam \
+CREATE_INDEX=true \
+INPUT=/home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Bernstein_isogenic2_rep3.bam \
+OUTPUT=/home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Bernstein_isogenic2_rep3_sort.bam \
+SORT_ORDER=coordinate \
+VALIDATION_STRINGENCY=STRICT &
+
+java -jar /home/rtm/myprograms/picard/build/libs/picard.jar SortSam \
+CREATE_INDEX=true \
+INPUT=/home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Peggy_rep1.bam \
+OUTPUT=/home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Peggy_rep1_sort.bam \
+SORT_ORDER=coordinate \
+VALIDATION_STRINGENCY=STRICT 
+
+java -jar /home/rtm/myprograms/picard/build/libs/picard.jar SortSam \
+CREATE_INDEX=true \
+INPUT=/home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Peggy_rep2.bam \
+OUTPUT=/home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Peggy_rep2_sort.bam \
+SORT_ORDER=coordinate \
+VALIDATION_STRINGENCY=STRICT 
+####
+java -jar /home/rtm/myprograms/picard/build/libs/picard.jar SortSam \
+CREATE_INDEX=true \
+INPUT=/home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Bernstein_isogenic1.bam \
+OUTPUT=/home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Bernstein_isogenic1.bam \
+SORT_ORDER=coordinate \
+VALIDATION_STRINGENCY=STRICT &
+
+java -jar /home/rtm/myprograms/picard/build/libs/picard.jar SortSam \
+CREATE_INDEX=true \
+INPUT=/home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Bernstein_isogenic2_rep1.bam \
+OUTPUT=/home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Bernstein_isogenic2_rep1_sort.bam \
+SORT_ORDER=coordinate \
+VALIDATION_STRINGENCY=STRICT &
+
+java -jar /home/rtm/myprograms/picard/build/libs/picard.jar SortSam \
+CREATE_INDEX=true \
+INPUT=/home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Bernstein_isogenic2_rep2.bam \
+OUTPUT=/home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Bernstein_isogenic2_rep2_sort.bam \
+SORT_ORDER=coordinate \
+VALIDATION_STRINGENCY=STRICT &
+
+java -jar /home/rtm/myprograms/picard/build/libs/picard.jar SortSam \
+CREATE_INDEX=true \
+INPUT=/home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Bernstein_isogenic2_rep3.bam \
+OUTPUT=/home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Bernstein_isogenic2_rep3_sort.bam \
+SORT_ORDER=coordinate \
+VALIDATION_STRINGENCY=STRICT &
+
+java -jar /home/rtm/myprograms/picard/build/libs/picard.jar SortSam \
+CREATE_INDEX=true \
+INPUT=/home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Myers_rep1.bam \
+OUTPUT=/home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Myers_rep1_sort.bam \
+SORT_ORDER=coordinate \
+VALIDATION_STRINGENCY=STRICT &
+
+java -jar /home/rtm/myprograms/picard/build/libs/picard.jar SortSam \
+CREATE_INDEX=true \
+INPUT=/home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Myers_rep2.bam \
+OUTPUT=/home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Myers_rep2_sort.bam \
+SORT_ORDER=coordinate \
+VALIDATION_STRINGENCY=STRICT &
+
+java -jar /home/rtm/myprograms/picard/build/libs/picard.jar SortSam \
+CREATE_INDEX=true \
+INPUT=/home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Peggy_rep1.bam \
+OUTPUT=/home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Peggy_rep1_sort.bam \
+SORT_ORDER=coordinate \
+VALIDATION_STRINGENCY=STRICT &
+
+java -jar /home/rtm/myprograms/picard/build/libs/picard.jar SortSam \
+CREATE_INDEX=true \
+INPUT=/home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Peggy_rep2.bam \
+OUTPUT=/home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Peggy_rep2_sort.bam \
+SORT_ORDER=coordinate \
+VALIDATION_STRINGENCY=STRICT
+################################################################################################################################################################
+################################################################################################################################################################
+# MarkDup
+java -Xmx250g -jar /home/rtm/myprograms/picard/build/libs/picard.jar MarkDuplicates \
+VALIDATION_STRINGENCY=STRICT \
+CREATE_INDEX=true \
+M=HCT116_CEBPB_rep1.txt \
+INPUT=/home/rtm/chip-em/encode_data/encode_bam/HCT116_CEBPB_rep1_sort.bam \
+OUTPUT=/home/rtm/chip-em/encode_data/encode_bam/HCT116_CEBPB_rep1_rmdup.bam
+
+java -Xmx250g -jar /home/rtm/myprograms/picard/build/libs/picard.jar MarkDuplicates \
+VALIDATION_STRINGENCY=STRICT \
+CREATE_INDEX=true \
+M=HCT116_CEBPB_rep2.txt \
+INPUT=/home/rtm/chip-em/encode_data/encode_bam/HCT116_CEBPB_rep2_sort.bam \
+OUTPUT=/home/rtm/chip-em/encode_data/encode_bam/HCT116_CEBPB_rep2_rmdup.bam
+
+java -Xmx250g -jar /home/rtm/myprograms/picard/build/libs/picard.jar MarkDuplicates \
+VALIDATION_STRINGENCY=STRICT \
+CREATE_INDEX=true \
+M=HCT116_H3K4me1_Bernstein_isogenic1_rep1.txt \
+INPUT=/home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Bernstein_isogenic1_rep1_sort.bam \
+OUTPUT=/home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Bernstein_isogenic1_rep1_rmdup.bam
+
+java -Xmx250g -jar /home/rtm/myprograms/picard/build/libs/picard.jar MarkDuplicates \
+VALIDATION_STRINGENCY=STRICT \
+CREATE_INDEX=true \
+M=HCT116_H3K4me1_Bernstein_isogenic1_rep2.txt \
+INPUT=/home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Bernstein_isogenic1_rep2_sort.bam \
+OUTPUT=/home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Bernstein_isogenic1_rep2_rmdup.bam
+
+java -Xmx250g -jar /home/rtm/myprograms/picard/build/libs/picard.jar MarkDuplicates \
+VALIDATION_STRINGENCY=STRICT \
+CREATE_INDEX=true \
+M=HCT116_H3K4me1_Bernstein_isogenic2_rep1.txt \
+INPUT=/home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Bernstein_isogenic2_rep1_sort.bam \
+OUTPUT=/home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Bernstein_isogenic2_rep1_rmdup.bam
+
+java -Xmx250g -jar /home/rtm/myprograms/picard/build/libs/picard.jar MarkDuplicates \
+VALIDATION_STRINGENCY=STRICT \
+CREATE_INDEX=true \
+M=HCT116_H3K4me1_Bernstein_isogenic2_rep2.txt \
+INPUT=/home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Bernstein_isogenic2_rep2_sort.bam \
+OUTPUT=/home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Bernstein_isogenic2_rep2_rmdup.bam
+
+java -Xmx250g -jar /home/rtm/myprograms/picard/build/libs/picard.jar MarkDuplicates \
+VALIDATION_STRINGENCY=STRICT \
+CREATE_INDEX=true \
+M=HCT116_H3K4me1_Bernstein_isogenic2_rep3.txt \
+INPUT=/home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Bernstein_isogenic2_rep3_sort.bam \
+OUTPUT=/home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Bernstein_isogenic2_rep3_rmdup.bam
+
+java -Xmx250g -jar /home/rtm/myprograms/picard/build/libs/picard.jar MarkDuplicates \
+VALIDATION_STRINGENCY=STRICT \
+CREATE_INDEX=true \
+M=HCT116_H3K4me1_Peggy_rep1.txt \
+INPUT=/home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Peggy_rep1_sort.bam \
+OUTPUT=/home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Peggy_rep1_rmdup.bam
+
+java -Xmx250g -jar /home/rtm/myprograms/picard/build/libs/picard.jar MarkDuplicates \
+VALIDATION_STRINGENCY=STRICT \
+CREATE_INDEX=true \
+M=HCT116_H3K4me1_Peggy_rep2.txt \
+INPUT=/home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Peggy_rep2_sort.bam \
+OUTPUT=/home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Peggy_rep2_rmdup.bam
+
+java -Xmx250g -jar /home/rtm/myprograms/picard/build/libs/picard.jar MarkDuplicates \
+VALIDATION_STRINGENCY=STRICT \
+CREATE_INDEX=true \
+M=HCT116_input_Bernstein_isogenic1.txt \
+INPUT=/home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Bernstein_isogenic1_sort.bam \
+OUTPUT=/home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Bernstein_isogenic1_rmdup.bam
+
+java -Xmx250g -jar /home/rtm/myprograms/picard/build/libs/picard.jar MarkDuplicates \
+VALIDATION_STRINGENCY=STRICT \
+CREATE_INDEX=true \
+M=HCT116_input_Bernstein_isogenic2_rep1.txt \
+INPUT=/home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Bernstein_isogenic2_rep1_sort.bam \
+OUTPUT=/home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Bernstein_isogenic2_rep1_rmdup.bam
+
+java -Xmx250g -jar /home/rtm/myprograms/picard/build/libs/picard.jar MarkDuplicates \
+VALIDATION_STRINGENCY=STRICT \
+CREATE_INDEX=true \
+M=HCT116_input_Bernstein_isogenic2_rep2.txt \
+INPUT=/home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Bernstein_isogenic2_rep2_sort.bam \
+OUTPUT=/home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Bernstein_isogenic2_rep2_rmdup.bam
+
+java -Xmx250g -jar /home/rtm/myprograms/picard/build/libs/picard.jar MarkDuplicates \
+VALIDATION_STRINGENCY=STRICT \
+CREATE_INDEX=true \
+M=HCT116_input_Bernstein_isogenic2_rep3.txt \
+INPUT=/home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Bernstein_isogenic2_rep3_sort.bam \
+OUTPUT=/home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Bernstein_isogenic2_rep3_rmdup.bam
+
+java -Xmx250g -jar /home/rtm/myprograms/picard/build/libs/picard.jar MarkDuplicates \
+VALIDATION_STRINGENCY=STRICT \
+CREATE_INDEX=true \
+M=HCT116_input_Myers_rep1.txt \
+INPUT=/home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Myers_rep1_sort.bam \
+OUTPUT=/home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Myers_rep1_rmdup.bam
+
+java -Xmx250g -jar /home/rtm/myprograms/picard/build/libs/picard.jar MarkDuplicates \
+VALIDATION_STRINGENCY=STRICT \
+CREATE_INDEX=true \
+M=HCT116_input_Myers_rep2.txt \
+INPUT=/home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Myers_rep2_sort.bam \
+OUTPUT=/home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Myers_rep2_rmdup.bam
+
+java -Xmx250g -jar /home/rtm/myprograms/picard/build/libs/picard.jar MarkDuplicates \
+VALIDATION_STRINGENCY=STRICT \
+CREATE_INDEX=true \
+M=HCT116_input_Peggy_rep1.txt \
+INPUT=/home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Peggy_rep1_sort.bam \
+OUTPUT=/home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Peggy_rep1_rmdup.bam
+
+java -Xmx250g -jar /home/rtm/myprograms/picard/build/libs/picard.jar MarkDuplicates \
+VALIDATION_STRINGENCY=STRICT \
+CREATE_INDEX=true \
+M=HCT116_input_Peggy_rep2.txt \
+INPUT=/home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Peggy_rep2_sort.bam \
+OUTPUT=/home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Peggy_rep2_rmdup.bam
+################################################################################################################################################################
+################################################################################################################################################################
+# bigwig
+bamCoverage -p max -bs 1 --normalizeUsing CPM -b /home/rtm/chip-em/encode_data/encode_bam/HCT116_CEBPB_rep1_rmdup.bam -o /home/rtm/chip-em/encode_data/encode_bam/HCT116_CEBPB_rep1.bw
+bamCoverage -p max -bs 1 --normalizeUsing CPM -b /home/rtm/chip-em/encode_data/encode_bam/HCT116_CEBPB_rep2_rmdup.bam -o /home/rtm/chip-em/encode_data/encode_bam/HCT116_CEBPB_rep2.bw
+bamCoverage -p max -bs 1 --normalizeUsing CPM -b /home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Bernstein_isogenic1_rep1_rmdup.bam -o /home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Bernstein_isogenic1_rep1.bw
+bamCoverage -p max -bs 1 --normalizeUsing CPM -b /home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Bernstein_isogenic1_rep2_rmdup.bam -o /home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Bernstein_isogenic1_rep2.bw
+bamCoverage -p max -bs 1 --normalizeUsing CPM -b /home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Bernstein_isogenic2_rep1_rmdup.bam -o /home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Bernstein_isogenic2_rep1.bw
+bamCoverage -p max -bs 1 --normalizeUsing CPM -b /home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Bernstein_isogenic2_rep2_rmdup.bam -o /home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Bernstein_isogenic2_rep2.bw
+bamCoverage -p max -bs 1 --normalizeUsing CPM -b /home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Bernstein_isogenic2_rep3_rmdup.bam -o /home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Bernstein_isogenic2_rep3.bw
+bamCoverage -p max -bs 1 --normalizeUsing CPM -b /home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Peggy_rep1_rmdup.bam -o /home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Peggy_rep1.bw
+bamCoverage -p max -bs 1 --normalizeUsing CPM -b /home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Peggy_rep2_rmdup.bam -o /home/rtm/chip-em/encode_data/encode_bam/HCT116_H3K4me1_Peggy_rep2.bw
+bamCoverage -p max -bs 1 --normalizeUsing CPM -b /home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Bernstein_isogenic1_rmdup.bam -o /home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Bernstein_isogenic1.bw
+bamCoverage -p max -bs 1 --normalizeUsing CPM -b /home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Bernstein_isogenic2_rep1_rmdup.bam -o /home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Bernstein_isogenic2_rep1.bw
+bamCoverage -p max -bs 1 --normalizeUsing CPM -b /home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Bernstein_isogenic2_rep2_rmdup.bam -o /home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Bernstein_isogenic2_rep2.bw
+bamCoverage -p max -bs 1 --normalizeUsing CPM -b /home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Bernstein_isogenic2_rep3_rmdup.bam -o /home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Bernstein_isogenic2_rep3.bw
+bamCoverage -p max -bs 1 --normalizeUsing CPM -b /home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Myers_rep1_rmdup.bam -o /home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Myers_rep1.bw
+bamCoverage -p max -bs 1 --normalizeUsing CPM -b /home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Myers_rep2_rmdup.bam -o /home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Myers_rep2.bw
+bamCoverage -p max -bs 1 --normalizeUsing CPM -b /home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Peggy_rep1_rmdup.bam -o /home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Peggy_rep1.bw
+bamCoverage -p max -bs 1 --normalizeUsing CPM -b /home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Peggy_rep2_rmdup.bam -o /home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Peggy_rep2.bw
+
+
+

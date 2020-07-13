@@ -169,9 +169,23 @@ bamCoverage -p max -bs 1 --normalizeUsing CPM -b /home/rtm/chip-em/bam/HCT116_DK
 bamCoverage -p max -bs 1 --normalizeUsing CPM -b /home/rtm/chip-em/bam/HCT116_WT_CEBPB_rmdup.bam -o /home/rtm/chip-em/bam/HCT116_WT_CEBPB.bw
 bamCoverage -p max -bs 1 --normalizeUsing CPM -b /home/rtm/chip-em/bam/HCT116_WT_H3K4me1_rmdup.bam -o /home/rtm/chip-em/bam/HCT116_WT_H3K4me1.bw
 ################################################################################################################################################################
+################################################################################################################################################################
+# HCT116 WGBS preprocessing
+# scp -P 60057 root@172.18.149.78:/root/HCT116_wgbs/trim/combine_hct116_WGBS_1_val_1.fq.gz .
+# scp -P 60057 root@172.18.149.78:/root/HCT116_wgbs/trim/combine_hct116_WGBS_2_val_2.fq.gz .
 
-
-
+# Bismark aligment.
+/home/rtm/myprograms/Bismark/bismark --bowtie2 --multicore 22 \
+/home/rtm/chip-em/genome_hg38_wgbs/ \
+-1 /home/rtm/chip-em/hct116_wgbs/combine_hct116_WGBS_1_val_1.fq.gz \
+-2 /home/rtm/chip-em/hct116_wgbs/combine_hct116_WGBS_2_val_2.fq.gz \
+--output_dir /home/rtm/chip-em/hct116_wgbs/
+# meth ext.
+/home/rtm/myprograms/Bismark/bismark_methylation_extractor --multicore 20 --gzip \
+--paired-end --bedGraph --comprehensive --cytosine_report \
+--CX_context --genome_folder /home/rtm/chip-em/genome_hg38_wgbs/ /home/rtm/chip-em/hct116_wgbs/combine_hct116_WGBS_1_val_1_bismark_bt2_pe.bam \
+--output /home/rtm/chip-em/hct116_wgbs/
+################################################################################################################################################################
 
 
 

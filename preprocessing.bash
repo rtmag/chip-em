@@ -186,22 +186,22 @@ bamCoverage -p max -bs 1 --normalizeUsing CPM -b /home/rtm/chip-em/bam/HCT116_WT
 --CX_context --genome_folder /home/rtm/chip-em/genome_hg38_wgbs/ /home/rtm/chip-em/hct116_wgbs/combine_hct116_WGBS_1_val_1_bismark_bt2_pe.bam \
 --output /home/rtm/chip-em/hct116_wgbs/
 ################################################################################################################################################################
-# macs2
+# macs2 !!!!! NEED TO REDO MISTAKEN INPUT !!!!!
 macs2 callpeak -f BAMPE -g hs -q 0.05 --keep-dup auto --call-summits -n CHIPEM_WT_CEBPB_bernsteinInput --outdir /home/rtm/chip-em/macs2/ \
 -t /home/rtm/chip-em/bam/HCT116_WT_CEBPB_rmdup.bam \
--c /home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Bernstein_isogenic1_rmdup.bam &
+-c /home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Bernstein_isogenic1.bam &
 
 macs2 callpeak -f BAMPE -g hs -q 0.05 --keep-dup auto --call-summits -n CHIPEM_DKO_CEBPB_bernsteinInput --outdir /home/rtm/chip-em/macs2/ \
 -t /home/rtm/chip-em/bam/HCT116_DKO_CEBPB_rmdup.bam \
--c /home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Bernstein_isogenic1_rmdup.bam &
+-c /home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Bernstein_isogenic1.bam &
 
 macs2 callpeak -f BAMPE -g hs -q 0.05 --keep-dup auto --call-summits -n CHIPEM_DKO_H3K4me1_bernsteinInput --outdir /home/rtm/chip-em/macs2/ \
 -t /home/rtm/chip-em/bam/HCT116_DKO_H3K4me1_rmdup.bam \
--c /home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Bernstein_isogenic1_rmdup.bam &
+-c /home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Bernstein_isogenic1.bam &
 
 macs2 callpeak -f BAMPE -g hs -q 0.05 --keep-dup auto --call-summits -n CHIPEM_WT_H3K4me1_bernsteinInput --outdir /home/rtm/chip-em/macs2/ \
 -t /home/rtm/chip-em/bam/HCT116_WT_H3K4me1_rmdup.bam \
--c /home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Bernstein_isogenic1_rmdup.bam &
+-c /home/rtm/chip-em/encode_data/encode_bam/HCT116_input_Bernstein_isogenic1.bam &
 ##############################################################################################################################
 macs2 callpeak -f BAMPE -g hs -q 0.05 --keep-dup auto --call-summits -n CHIPEM_WT_CEBPB_stephInput --outdir /home/rtm/chip-em/macs2/ \
 -t /home/rtm/chip-em/bam/HCT116_WT_CEBPB_rmdup.bam \

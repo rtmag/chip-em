@@ -104,6 +104,17 @@ legend("topright",  legend=c("HCT_DKO_CEBPB","HCT_DKO_H3K4me1","HCT_WT_CEBPB","H
        fill=c('black','red','blue',"purple","darkgreen"), bty = "n")
 dev.off()
 
+
+pdf("allCytosine_coverage.pdf")
+plot(density(HCT_DKO_H3K4me1_cov),col="blue",main="ChIP-EM Cytosine Coverage")
+lines(density(HCT_DKO_H3K4me1_cov),col="red")
+lines(density(HCT_DKO_CEBPB_cov),col="black")
+lines(density(HCT_WT_H3K4me1_cov),col="purple")
+lines(density(K562_WT_H3K4me1_cov),col="darkgreen")
+legend("topright",  legend=c("HCT_DKO_CEBPB","HCT_DKO_H3K4me1","HCT_WT_CEBPB","HCT_WT_H3K4me1","K562_WT_H3K4me1"), 
+       fill=c('black','red','blue',"purple","darkgreen"), bty = "n")
+dev.off()
+
 # table(
 
 # create dataframe
@@ -112,4 +123,13 @@ barplot(t(females),beside=T,ylim=c(0,70),xlab="Hair Color",ylab="Frequency of Ey
               Color", col=color.names,axis.lty="solid")
 ############################################################################################################################################################
 myobj[[1]][myobj[[1]]$chr=="lambda",]
+
+############################################################################################################################################################
+puc19_cg_wt<-read.table(pipe("more HCT116_WT_H3K4me1_puc19.CX_report.txt |grep -w CG"),sep="\t")
+round(sum(puc19_cg_wt[,4])/sum(puc19_cg_wt[,4],puc19_cg_wt[,5])*100,digits=3)
+
+puc19_cg_dko<-read.table(pipe("more HCT116_DKO_H3K4me1_puc19.CX_report.txt |grep -w CG"),sep="\t")
+round(sum(puc19_cg_dko[,4])/sum(puc19_cg_dko[,4],puc19_cg_dko[,5])*100,digits=3)
+
+
 

@@ -235,3 +235,11 @@ macs2 callpeak -f BAMPE -g hs -q 0.05 --keep-dup auto --call-summits -n CHIPEM_D
 macs2 callpeak -f BAMPE -g hs -q 0.05 --keep-dup auto --call-summits -n CHIPEM_WT_H3K4me1_noInput --outdir /home/rtm/chip-em/macs2/ \
 -t /home/rtm/chip-em/bam/HCT116_WT_H3K4me1_rmdup.bam &
 ##############################################################################################################################
+# stephInput Broad
+macs2 callpeak -f BAMPE -g hs -q 0.01 --keep-dup auto --call-summits -n CHIPEM_DKO_H3K4me1_stephInput_broad --outdir /home/rtm/chip-em/macs2/ \
+-t /home/rtm/chip-em/bam/HCT116_DKO_H3K4me1_rmdup.bam \
+-c /home/rtm/chip-em/hct116_data_steph/input_48_DMSO_rmdup.bam &
+
+macs2 callpeak -f BAMPE -g hs -q 0.01 --keep-dup auto --call-summits -n CHIPEM_WT_H3K4me1_stephInput_broad --outdir /home/rtm/chip-em/macs2/ \
+-t /home/rtm/chip-em/bam/HCT116_WT_H3K4me1_rmdup.bam \
+-c /home/rtm/chip-em/hct116_data_steph/input_48_DMSO_rmdup.bam &

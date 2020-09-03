@@ -130,6 +130,27 @@ round(sum(puc19_cg_wt[,4])/sum(puc19_cg_wt[,4],puc19_cg_wt[,5])*100,digits=3)
 
 puc19_cg_dko<-read.table(pipe("more HCT116_DKO_H3K4me1_puc19.CX_report.txt |grep -w CG"),sep="\t")
 round(sum(puc19_cg_dko[,4])/sum(puc19_cg_dko[,4],puc19_cg_dko[,5])*100,digits=3)
+############################################################################################################################################################
+############################################################################################################################################################
+############################################################################################################################################################
+############################################################################################################################################################
+# Is Chip-EM methylation profile the same as WGBS?
+library(methylKit)
+file.list=list( 
+"/home/rtm/chip-em/hct116_wgbs/combine_hct116_WGBS_1_val_1_bismark_bt2_pe.CX_report.txt.gz",
+"/home/rtm/chip-em/methylation_extractor/HCT116_WT_H3K4me1_R1_val_1_bismark_bt2_pe.CX_report.txt.gz"
+ )
 
+myobj=methRead(file.list,
+           sample.id=list("HCT116_WGBS","HCT116_WT_H3K4me1"),
+           assembly="hg38",
+           treatment=c(1,2),
+           context="CpG",
+           pipeline="bismarkCytosineReport",
+           header=FALSE,
+           mincov=5)
 
-
+meth=unite(myobj, destrand=TRUE,mc.cores=20)
+pooled.meth=pool(meth,sample.ids=c("HCT116_WGBS","HCT116_WT_H3K4me1"))
+myDiff=calculateDiffMeth(pooled.meth,num.cores=20)
+###

@@ -189,10 +189,10 @@ dko <- getData(myobj[[1]])
 wt <- getData(myobj[[2]])
 
 pdf("beta_density_dko.pdf")
-plot(density(dko[,7]/dko[,5]),xlab="Beta value distribution DKO")
+plot(density(dko[,6]/dko[,5]),xlab="Beta value distribution DKO")
 dev.off()
 
 pdf("beta_density_wt.pdf")
-plot(density(wt[,7]/wt[,5]),xlab="Beta value distribution WT")
+plot(density(wt[,6]/wt[,5]),xlab="Beta value distribution WT")
 dev.off()
 #####

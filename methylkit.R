@@ -154,3 +154,45 @@ meth=unite(myobj, destrand=TRUE,mc.cores=20)
 pooled.meth=pool(meth,sample.ids=c("HCT116_WGBS","HCT116_WT_H3K4me1"))
 myDiff=calculateDiffMeth(pooled.meth,num.cores=20)
 ###
+options(bitmapType="cairo")
+library(ggplot2)
+png("VOLCANO_WGBS_VS_CHIPEM_METH_gray.png")
+plot(myDiff$meth.diff,-log10(myDiff$qvalue),xlim=c(-100,100),ylim=c(0,7),
+             xlab = "DNA methylation difference (WGBS / CHiP-EM)",
+             ylab=expression('-Log'[10]*' Q-values'),col=alpha("grey",.5),pch=20)
+abline(h=-log10(.05),lty=2)
+abline(v=25,lty=2)
+abline(v=-25,lty=2)
+legend("topright", paste("WGBS:",length(which(myDiff$meth.diff>25 & myDiff$qvalue<0.05))), bty="n") 
+legend("topleft", paste("CHiP-EM:",length(which(myDiff$meth.diff<(-25) & myDiff$qvalue<0.05))), bty="n") 
+#points(myDiff$meth.diff[abs(myDiff$meth.diff)>25 & myDiff$qvalue<0.05],
+#       -log10(myDiff$qvalue[abs(myDiff$meth.diff)>25 & myDiff$qvalue<0.05]),
+#       col=alpha("#c0392b",.01) )
+dev.off()
+###
+
+file.list=list( 
+"/home/rtm/chip-em/methylation_extractor/HCT116_DKO_H3K4me1_R1_val_1_bismark_bt2_pe.CX_report.txt.gz",
+"/home/rtm/chip-em/methylation_extractor/HCT116_WT_H3K4me1_R1_val_1_bismark_bt2_pe.CX_report.txt.gz"
+ )
+
+myobj=methRead(file.list,
+           sample.id=list("HCT_DKO_H3K4me1","HCT_WT_H3K4me1"),
+           assembly="hg38",
+           treatment=c(1,2),
+           context="CpG",
+           pipeline="bismarkCytosineReport",
+           header=FALSE,
+           mincov=5)
+
+dko <- getData(myobj[[1]])
+wt <- getData(myobj[[2]])
+
+pdf("beta_density_dko.pdf")
+plot(density(dko[,7]/dko[,5]),xlab="Beta value distribution DKO")
+dev.off()
+
+pdf("beta_density_wt.pdf")
+plot(density(wt[,7]/wt[,5]),xlab="Beta value distribution WT")
+dev.off()
+#####

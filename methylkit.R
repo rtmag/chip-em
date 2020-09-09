@@ -196,3 +196,37 @@ pdf("beta_density_wt.pdf")
 plot(density(wt[,6]/wt[,5]),xlab="Beta value distribution WT")
 dev.off()
 #####
+############################################################################################################################################################
+############################################################################################################################################################
+############################################################################################################################################################
+############################################################################################################################################################
+# Is Chip-EM methylation profile the same as WGBS?
+library(methylKit)
+library(genomation)
+
+file.list=list( 
+"/home/rtm/chip-em/methylation_extractor/HCT116_DKO_H3K4me1_R1_val_1_bismark_bt2_pe.CX_report.txt.gz",
+"/home/rtm/chip-em/methylation_extractor/HCT116_WT_H3K4me1_R1_val_1_bismark_bt2_pe.CX_report.txt.gz"
+ )
+
+myobj=methRead(file.list,
+           sample.id=list("HCT116_DKO_H3K4me1","HCT116_WT_H3K4me1"),
+           assembly="hg38",
+           treatment=c(1,2),
+           context="CpG",
+           pipeline="bismarkCytosineReport",
+           header=FALSE,
+           mincov=5)
+
+promoters=regionCounts(myobj,gene.obj$promoters)
+
+
+meth=unite(myobj, destrand=TRUE,mc.cores=20)
+pooled.meth=pool(meth,sample.ids=c("HCT116_DKO_H3K4me1","HCT116_WT_H3K4me1"))
+myDiff=calculateDiffMeth(pooled.meth,num.cores=20)
+###
+tss <- readBed("/home/rtm/chip-em/tss_analy/hg38_tss_2kb.bed")
+promoters=regionCounts(myobj,tss)
+promoters_unite=unite(promoters, destrand=TRUE,mc.cores=20)
+myDiff=calculateDiffMeth(promoters_unite)
+

@@ -229,4 +229,5 @@ tss <- readBed("/home/rtm/chip-em/tss_analy/hg38_tss_2kb.bed")
 promoters=regionCounts(myobj,tss)
 promoters_unite=unite(promoters, destrand=TRUE,mc.cores=20)
 myDiff=calculateDiffMeth(promoters_unite)
-
+###
+mydiff_df<-getData(myDiff)

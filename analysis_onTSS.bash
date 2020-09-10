@@ -11,6 +11,12 @@ computeMatrix reference-point \
 --outFileNameMatrix HCT116_H3K4me1.Rmat \
 --outFileSortedRegions HCT116_H3K4me1_sorted.bed
 
+plotHeatmap --xAxisLabel "" --yAxisLabel "" --colorMap "Blues" "Blues" \
+-m HCT116_H3K4me1.mat \
+--samplesLabel "H3K4me1 WT" "H3K4me1 DKO" \
+-out CHIPEM_H3k4me1_tss.pdf
+
+
 computeMatrix reference-point \
 -S \
 /home/rtm/chip-em/methylation_extractor/HCT116_WT_H3K4me1_5cov.bw \
@@ -22,7 +28,7 @@ computeMatrix reference-point \
 --outFileSortedRegions HCT116_meth_sorted.bed
 
 
-plotHeatmap --xAxisLabel "" --yAxisLabel "" --colorMap "Blues" "Reds" \
--m CHIPEM_H3k4me1.mat \
+plotHeatmap --xAxisLabel "" --yAxisLabel "" --colorMap "Reds" "Reds" \
+-m HCT116_meth.mat \
 --samplesLabel "H3K4me1 WT" "H3K4me1 DKO" \
--out CHIPEM_H3k4me1.pdf
+-out HCT116_meth_tss.pdf --zMax 90 --yMax 90 --missingDataColor "gray"
